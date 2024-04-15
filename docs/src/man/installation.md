@@ -27,7 +27,7 @@ Then:
 
 Download, install and open [Atom](https://atom.io). If you have it already, make sure it's up to date (version 1.41+).
 
-## 3. Install Juno
+## 3. Install Juno and Configure IDE
 
 In Atom, go to Settings (`Ctrl+,`, or `Cmd+,` on macOS. Note that this is Control plus comma!) and go to the "Install" panel.
 
@@ -40,6 +40,41 @@ Atom will then set up Juno for you, installing the required Atom and Julia packa
     To do so, go to `Packages > Juno > Settings` and in the first box for `Julia Path`
     insert the path to your Julia installation
     (example: `C:\Users\UserName\AppData\Local\Julia-1.2.0\bin\julia.exe`)
+    
+- If after following above steps you are not able to work in `juno` or you are facing any error when installing, then follow below steps: 
+
+First we will see that what error you can face. When you install `uber-juno` you can be prompted that you can't install the `uber-juno` package. 
+```
+Juno: Error installing package julia-client
+
+Please check your internet connection, or report this to
+    http://discuss.junolab.org
+and we'll try to help.
+    –––
+Error: Installing “julia-client@0.8.10” failed.
+```
+And try starting a terminal and type in `apm install julia-client`. 
+
+So, sometimes it seems to be a problem related to network connectivity. If you are not able to solve your probleem, then you can just try below steps. 
+
+To install `Juno`, open atom, click on `file` > `settings` > `install-packages` and type `uber-juno`: this is the package that you need to install. `uber-juno` will do everything by itself and install the IDE in a matter of minutes!
+
+Once the setup is done, we need to tell `Juno` where to find the `Julia` binary: go to `file` > `settings` > `packages` and type `julia-client`
+
+You should now click on `settings` and navigate to the `Settings`section: you will find a field called `Julia Path`: you should type the path to the Julia executable in there.
+
+In my case, the path to my `Julia` executable is `C:\Users\UserName\AppData\Local\Julia-1.2.0\bin\julia.exe`
+
+If you have done everything correctly now you can start a `Julia` session inside atom: to do so click on the `earth-like icon` on the left toolbar `(or go to Juno > Start Julia)`. A panel should open on the lower end of Atom and you should be able to access the `Julia REPL`.
+
+I suggest that you type the following code to check whether your setup is successful:
+
+```julia
+println("Hello World! This is Julia!")
+```
+That’s it, you have successfully installed Julia and setup the Juno IDE: easy, isn’t it? You can now start coding and start you journey in the wonderful world of the Julia Language!
+
+If you are new to Julia, I suggest that you take a look at the wonderful JuliaComputing introductory tutorials
 
 ## 4. Use Juno
 
